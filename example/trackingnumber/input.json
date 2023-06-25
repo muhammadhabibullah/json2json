@@ -1,0 +1,23 @@
+{
+  "tracking_number": "1234567890",
+  "status": "A",
+  "dropoff": "1",
+  "weight": 2,
+  "dimension": {
+    "length": 100,
+    "width": 60,
+    "height": 1
+  },
+  "packages": [
+    {
+      "sku": "12345",
+      "quantity": 2,
+      "item_weight": 0.5
+    },
+    {
+      "sku": "67890",
+      "quantity": 1,
+      "item_weight": 0.5
+    }
+  ]
+}

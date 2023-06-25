@@ -1,0 +1,15 @@
+{
+  "data": "OBJECT(AND([tracking_number]<>'',GT(LEN([tracking_number]),5)),NO_PARAM)",
+  "data.tn": "STRING([tracking_number])",
+  "data.status": "INT(SWITCH([status],'A',1,'B',2,'B2',2,'C',3,0))",
+  "data.drop_off": "BOOL([dropoff]=1)",
+  "data.estimate_weight": "FLOAT(VAR('var_estimate_weight_2',[weight]),1)",
+  "data.volumetric_weight": "VAR('var_volumetric_weight_1',NO_PARAM)",
+  "data.skus": "ARRAY([packages],EMPTY_ARRAY)",
+  "data.skus.sku": "STRING([packages.sku])",
+  "data.skus.qty": "INT([packages.quantity])",
+  "data.skus.total_weight": "FLOAT([packages.item_weight]*[packages.quantity],1)",
+  "error": "IF(OR([tracking_number]='',LEN([tracking_number])<=5),NIL,'got empty tracking number')",
+  "var_volumetric_weight_1": "SET(FLOAT([dimension.length]*[dimension.width]*[dimension.height]/6000))",
+  "var_estimate_weight_2": "SET(IF(GT(VAR('var_volumetric_weight_1',[weight]),[weight]),VAR('var_volumetric_weight_1',[weight]),[weight]))"
+}

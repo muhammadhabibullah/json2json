@@ -1,0 +1,22 @@
+{
+  "data": {
+    "tn": "1234567890",
+    "status": 1,
+    "drop_off": true,
+    "estimate_weight": 2.0,
+    "volumetric_weight": 1.00,
+    "skus": [
+      {
+        "sku": "12345",
+        "qty": 2,
+        "total_weight": 1.0
+      },
+      {
+        "sku": "67890",
+        "qty": 1,
+        "total_weight": 1.0
+      }
+    ]
+  },
+  "error": null
+}
